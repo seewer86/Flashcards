@@ -111,7 +111,3 @@ Diese Datei enthält u.a.:
   - lokale Admin‑Benutzer
 
 ---
-
-## Lizenz
-
-MIT
