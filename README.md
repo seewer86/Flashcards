@@ -1,3 +1,121 @@
+# Flashcards – PHP flashcards with local login & LDAP
+
+English version · Deutsche Version weiter unten
+
+This application is a simple web‑based flashcard app with an admin area, user management, and optional LDAP authentication.  
+It runs as a PHP/Apache container with MySQL/MariaDB and is well suited for small schools, companies, or private learning environments.
+
+---
+
+## Features
+
+- Study with simple question/answer flashcards
+- Categories for cards
+- Progress reset per user
+- Admin area for:
+  - Creating/editing categories and cards
+  - User management (only for **local** admin users)
+- Two auth modes:
+  - **Local**: Users stored in a MySQL table, password hashed via `password_hash`
+  - **LDAP / LDAPS**: Login against a directory service, users are mirrored locally
+- Multilingual setup (DE/EN/FR)
+- Setup wizard with:
+  - DB configuration
+  - Auth mode
+  - LDAP settings including a “Test LDAP” button
+
+---
+
+## System requirements
+
+- Docker / Docker Compose
+- Optional: OpenLDAP / Active Directory for LDAP login
+
+---
+
+## Installation (with Docker)
+
+1. Clone the repository:
+
+   ```bash
+   git clone git@github.com:seewer86/Flashcards.git
+   cd Flashcards
+   ```
+
+2. Adjust DB passwords in the docker compose file:
+
+   ```bash
+   nano docker-compose.yml
+   ```
+
+3. Start the containers:
+
+   ```bash
+   docker compose up -d --build
+   ```
+
+4. The setup wizard opens on the first visit.
+
+5. Go through the setup:
+
+   - **Database**
+     - Enter host, DB name, user, password
+   - **App language**
+     - Choose default language (DE/EN/FR)
+   - **Authentication**
+     - Select `Local` or `LDAP`
+   - **Initial admin** (local only)
+     - Username + password of the first admin account
+   - **LDAP** (LDAP only)
+     - Scheme: `ldap://` or `ldaps://`
+     - Host: e.g. `192.168.1.100`
+     - Base DN: e.g. `ou=users,dc=example,dc=com`
+     - Group DN: e.g. `cn=flashcards,ou=groups,dc=example,dc=com`
+     - Bind DN: service account (e.g. `cn=admin,dc=example,dc=com`)
+     - Bind password: password of the service account
+     - Use the **“Test LDAP”** button to verify connection and user count
+
+6. After saving you will be redirected to the login page.
+
+---
+
+## Login & roles
+
+- **Local mode**
+  - The admin defined during setup can log in immediately.
+  - More users/passwords can be created in the admin area.
+  - Only local users with `is_admin = 1` see the **user management**.
+- **LDAP mode**
+  - Users log in with their LDAP account and password.
+  - On successful login a local record without password is created if needed.
+  - LDAP users do **not** see a link to user management.
+
+---
+
+## Configuration
+
+After setup, `config/config.php` is generated.  
+This file contains among other things:
+
+- App name & default language
+- Auth mode (`local` or `ldap`)
+- LDAP settings (`host`, `basedn`, `group_dn`, `bind_dn`, `bind_pass`)
+- Database connection parameters
+
+---
+
+## Security notes
+
+- Prefer **LDAPS** for LDAP.
+- Keep `config/config.php` out of version control.
+- Protect the setup URL once installation is finished (e.g. remove the setup directory or block it via web server).
+- Use long, random passwords for:
+  - DB user
+  - LDAP service account
+  - Local admin users
+
+---
+
 # Flashcards – PHP Lernkarten mit lokalem Login & LDAP
 
 Diese Anwendung ist eine einfache, webbasierte Lernkarten‑App mit Admin‑Bereich, Benutzerverwaltung und optionaler LDAP‑Authentifizierung.  
@@ -39,18 +157,20 @@ Sie läuft als PHP‑/Apache‑Container mit MySQL/MariaDB und eignet sich gut f
    git clone git@github.com:seewer86/Flashcards.git
    cd Flashcards
    ```
-2. DB Passwörter im docker compose anpassen:
-    ```bash
+
+2. DB‑Passwörter im Docker Compose anpassen:
+
+   ```bash
    nano docker-compose.yml
    ```
-  
+
 3. Container starten:
 
    ```bash
    docker compose up -d --build
    ```
 
-4. Setup‑Wizard öffnet sich beim ersten aufrufen der Seite.
+4. Setup‑Wizard öffnet sich beim ersten Aufrufen der Seite.
 
 5. Setup durchlaufen:
 
@@ -60,7 +180,7 @@ Sie läuft als PHP‑/Apache‑Container mit MySQL/MariaDB und eignet sich gut f
      - Standardsprache wählen (DE/EN/FR)
    - **Authentication**
      - `Local` oder `LDAP` auswählen
-   - **Initial admin (local)** (nur bei Local)
+   - **Initial admin** (nur bei Local)
      - Benutzername + Passwort des ersten Admin‑Accounts
    - **LDAP** (nur bei LDAP)
      - Schema: `ldap://` oder `ldaps://`
