@@ -3,6 +3,7 @@
 English version · Deutsche Version weiter unten
 
 This application is a simple web‑based flashcard app with an admin area, user management, and optional LDAP authentication.  
+It is optimized for smartphones and can be installed as a **Progressive Web App (PWA)**, so users can add it to their home screen and use it like a native app.  
 It runs as a PHP/Apache container with MySQL/MariaDB and is well suited for small schools, companies, or private learning environments.
 
 ---
@@ -10,6 +11,8 @@ It runs as a PHP/Apache container with MySQL/MariaDB and is well suited for smal
 ## Features
 
 - Study with simple question/answer flashcards
+- Mobile‑friendly responsive UI
+- Installable as a PWA (add to home screen, full‑screen usage)
 - Categories for cards
 - Progress reset per user
 - Admin area for:
@@ -119,6 +122,7 @@ This file contains among other things:
 # Flashcards – PHP Lernkarten mit lokalem Login & LDAP
 
 Diese Anwendung ist eine einfache, webbasierte Lernkarten‑App mit Admin‑Bereich, Benutzerverwaltung und optionaler LDAP‑Authentifizierung.  
+Sie ist für Smartphones optimiert und kann als **Progressive Web App (PWA)** installiert werden, sodass Nutzer sie zum Homescreen hinzufügen und wie eine native App im Vollbild-Modus verwenden können.  
 Sie läuft als PHP‑/Apache‑Container mit MySQL/MariaDB und eignet sich gut für kleine Schulen, Firmen oder private Lernumgebungen.
 
 ---
@@ -126,6 +130,8 @@ Sie läuft als PHP‑/Apache‑Container mit MySQL/MariaDB und eignet sich gut f
 ## Features
 
 - Lernen mit einfachen Frage/Antwort‑Karteikarten
+- Mobile‑optimiertes, responsives UI
+- Als PWA installierbar (zum Homescreen hinzufügen, Vollbild‑Nutzung)
 - Kategorien für Karten
 - Fortschritts‑Reset pro Benutzer
 - Admin‑Bereich für:

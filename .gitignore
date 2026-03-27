@@ -1,2 +1,3 @@
 docker-compose.local.yml
 /web/config/config.php
+/web/public/apple-touch-icon.png
