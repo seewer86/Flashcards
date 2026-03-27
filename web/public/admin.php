@@ -123,6 +123,9 @@ $stmtList->close();
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="default">
+ <link rel="apple-touch-icon" href="../public/icons/apple-touch-icon.png">
  <title><?= htmlspecialchars(t('admin') . ' - ' . t('app_title')) ?></title>
  <style>
    body { font-family: system-ui, sans-serif; padding:1rem; background:#f5f5f5;margin:0; display:flex; justify-content:center; }
@@ -137,7 +140,7 @@ $stmtList->close();
    .topbar { margin-bottom:1rem; font-size:14px; }
    label { display:block; margin-top:.3rem; }
    .logo { text-align:center; margin-bottom:0.75rem; }
-   .logo img { max-height:40px; width:auto; }
+   .logo img { max-height:60px; width:auto; }
  </style>
 </head>
 <body>

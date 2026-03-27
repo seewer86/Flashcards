@@ -10,6 +10,9 @@ $user = current_user();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="../public/icons/apple-touch-icon.png">
   <title><?= htmlspecialchars(t('app_title')) ?></title>
   <style>
     body { font-family: system-ui, sans-serif; margin:0; padding:1rem; background:#f5f5f5; }
@@ -34,7 +37,7 @@ $user = current_user();
     #categoryBar { margin-bottom:0.5rem; }
     #categoryBar label { font-size:0.9rem; }
     .logo { text-align: center; margin-bottom: 0.75rem; }
-    .logo img { max-height: 40px; width: auto; }
+    .logo img { max-height: 60px; width: auto; }
   </style>
 </head>
 <body>

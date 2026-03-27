@@ -57,6 +57,9 @@ $stmt->close();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="../public/icons/apple-touch-icon.png">
     <title><?= htmlspecialchars(t('admin_users_title') ?? 'Benutzerverwaltung') ?></title>
     <style>
     body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; background: #f5f5f5; display: flex; justify-content: center; }
@@ -73,7 +76,7 @@ $stmt->close();
     th, td { border:1px solid #ccc; padding:.3rem .6rem; text-align:left; font-size:14px; }
     .topbar { margin-bottom:1rem; font-size:14px; }
     .logo { text-align:center; margin-bottom:0.75rem; }
-    .logo img { max-height:40px; width:auto; }
+    .logo img { max-height:60px; width:auto; }
     </style>
 </head>
 <body>

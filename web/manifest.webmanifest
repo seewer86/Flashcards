@@ -1,8 +1,7 @@
 {
   "name": "Karteikarten",
   "short_name": "Karteikarten",
-  "start_url": "/login.php",
-  "scope": "/",
+  "start_url": "/public/login.php",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1976d2",

@@ -13,73 +13,30 @@ if (current_user()) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#1976d2">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="../public/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../public/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../public/icons/icon-512.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="../public/icons/apple-touch-icon.png">
     <title><?= htmlspecialchars(t('login_title')) ?></title>
     <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #f5f5f7;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .card {
-            background: #fff;
-            padding: 32px 40px;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
-            max-width: 420px;
-            width: 100%;
-        }
-        h1 {
-            margin-top: 0;
-            margin-bottom: 24px;
-            font-size: 26px;
-        }
-        label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 8px 10px;
-            border-radius: 6px;
-            border: 1px solid #d1d5db;
-            font-size: 14px;
-        }
-        .field {
-            margin-bottom: 12px;
-        }
-        button {
-            width: 100%;
-            padding: 10px 14px;
-            border-radius: 8px;
-            border: none;
-            background: #e5e7eb;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #d1d5db;
-        }
-        .lang-switch {
-            font-size: 12px;
-            margin-bottom: 12px;
-            text-align: right;
-        }
-        .lang-switch a {
-            color: #2563eb;
-            text-decoration: none;
-            margin-left: 6px;
-        }
-        .lang-switch a.active {
-            font-weight: 600;
-            text-decoration: underline;
-        }
+     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f7; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+     .card { background: #fff; padding: 32px 40px; border-radius: 12px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12); max-width: 420px; width: 100%; }
+     h1 { margin-top: 0; margin-bottom: 24px; font-size: 26px; }
+     label { display: block; font-size: 14px; margin-bottom: 6px; }
+     input[type="text"],
+     input[type="password"] { width: 100%; box-sizing: border-box; padding: 8px 10px; border-radius: 6px; border: 1px solid #d1d5db; font-size: 14px; }
+     .field { margin-bottom: 12px; }
+     button { width: 100%; padding: 10px 14px; border-radius: 8px; border: none; background: #e5e7eb; font-size: 15px; cursor: pointer; }
+     button:hover { background: #d1d5db; }
+     .lang-switch { font-size: 12px; margin-bottom: 12px; text-align: right; }
+     .lang-switch a { color: #2563eb; text-decoration: none; margin-left: 6px; }
+     .lang-switch a.active { font-weight: 600; text-decoration: underline; }
     </style>
 </head>
 <body>
